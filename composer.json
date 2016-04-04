@@ -1,5 +1,5 @@
 {
-    "name": "ctl/SocialMapFavorites",
+    "name": "ctl/socialmapfavorites",
     "description": "Basic Packaging for Favoriting and Unfavoriting users",
     "keywords": [
         "ctl",
