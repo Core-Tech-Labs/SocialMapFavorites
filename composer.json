@@ -1,0 +1,52 @@
+{
+    "name": "ctl/SocialMapFavorites",
+    "description": "Basic Packaging for Favoriting and Unfavoriting users",
+    "keywords": [
+        "ctl",
+        "package",
+        "Fav",
+        "unFav",
+        "Social"
+    ],
+    "homepage": "https://github.com/Core-Tech-Labs/SocialMapFavorites",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Core Tech Labs",
+            "email": "info@ctlabs.net",
+            "homepage": "http://ctlabs.net"
+        },
+        {
+            "name": "Rudy Jessop",
+            "email": "rudyjessop@gmail.com",
+            "homepage": "http://ctlabs.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.5.9",
+        "illuminate/support": "^5.2",
+        "illuminate/contracts": "^5.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "illuminate/database": "^5.2",
+        "illuminate/events": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CTL\\SocialMapFavorites\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CTL\\SocialMapFavorites\\Test\\": "tests"
+        },
+        "classmap": ["tests/TestCase.php"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

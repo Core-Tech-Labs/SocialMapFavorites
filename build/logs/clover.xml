@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1459538011">
+  <project timestamp="1459538011">
+    <package name="CTL\SocialMapFavorites\Commands">
+      <file name="/Users/Mavericks/Documents/apps/SocialMapFavorites/src/Commands/FavAUserCommand.php">
+        <class name="FavAUserCommand" namespace="CTL\SocialMapFavorites\Commands">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+        </class>
+        <line num="21" type="method" name="__construct" crap="2" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="32" type="method" name="handle" crap="2" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <metrics loc="39" ncloc="29" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+      </file>
+      <file name="/Users/Mavericks/Documents/apps/SocialMapFavorites/src/Commands/unFavAUserCommand.php">
+        <class name="UnFavAUserCommand" namespace="CTL\SocialMapFavorites\Commands">
+          <metrics methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+        </class>
+        <line num="21" type="method" name="__construct" crap="2" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="32" type="method" name="handle" crap="2" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <metrics loc="37" ncloc="27" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="8" coveredstatements="0" elements="10" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="CTL\SocialMapFavorites\Core\Users">
+      <file name="/Users/Mavericks/Documents/apps/SocialMapFavorites/src/Core/Users/ActionableTrait.php">
+        <class name="ActionableTrait" namespace="CTL\SocialMapFavorites\Core\Users">
+          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
+        </class>
+        <line num="13" type="method" name="favUsers" crap="2" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="23" type="method" name="favs" crap="2" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="34" type="method" name="CheckFavorited" crap="2" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
+        <metrics loc="43" ncloc="25" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="8" coveredelements="0"/>
+      </file>
+      <file name="/Users/Mavericks/Documents/apps/SocialMapFavorites/src/Core/Users/UsersOrigin.php">
+        <class name="UsersOrigin" namespace="CTL\SocialMapFavorites\Core\Users">
+          <metrics methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
+        </class>
+        <line num="10" type="method" name="save" crap="2" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="19" type="method" name="getDashboardPaginated" crap="2" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="23" type="method" name="getFavPaginated" crap="2" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="stmt" count="0"/>
+        <line num="27" type="method" name="findUsernameBy" crap="2" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
+        <line num="37" type="method" name="findById" crap="2" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="48" type="method" name="favoriteUser" crap="2" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="58" type="method" name="unfavoriteUser" crap="2" count="0"/>
+        <line num="59" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <metrics loc="60" ncloc="37" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
+      </file>
+    </package>
+    <package name="CTL\SocialMapFavorites">
+      <file name="/Users/Mavericks/Documents/apps/SocialMapFavorites/src/SocialMapFavoritesServiceProvider.php">
+        <class name="SocialMapFavoritesServiceProvider" namespace="CTL\SocialMapFavorites">
+          <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+        </class>
+        <line num="15" type="method" name="boot" crap="2" count="0"/>
+        <line num="16" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="30" type="method" name="register" crap="2" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="35" type="method" name="setModelConnection" crap="2" count="0"/>
+        <line num="37" type="stmt" count="0"/>
+        <metrics loc="39" ncloc="25" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="10" coveredelements="0"/>
+      </file>
+    </package>
+    <file name="/Users/Mavericks/Documents/apps/SocialMapFavorites/src/database/CreateFavsTable.php">
+      <class name="CreateFavsTable" namespace="global">
+        <metrics methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="13" coveredelements="0"/>
+      </class>
+      <line num="13" type="method" name="up" crap="2" count="0"/>
+      <line num="14" type="stmt" count="0"/>
+      <line num="16" type="stmt" count="0"/>
+      <line num="17" type="stmt" count="0"/>
+      <line num="18" type="stmt" count="0"/>
+      <line num="19" type="stmt" count="0"/>
+      <line num="20" type="stmt" count="0"/>
+      <line num="21" type="stmt" count="0"/>
+      <line num="28" type="method" name="down" crap="2" count="0"/>
+      <line num="29" type="stmt" count="0"/>
+      <line num="30" type="method" name="anonymous function" crap="2" count="0"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="33" type="stmt" count="0"/>
+      <metrics loc="34" ncloc="24" classes="1" methods="3" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="14" coveredelements="0"/>
+    </file>
+    <metrics files="6" loc="252" ncloc="167" classes="6" methods="20" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="0" elements="73" coveredelements="0"/>
+  </project>
+</coverage>
