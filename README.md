@@ -8,7 +8,7 @@
 [![Total Downloads](https://poser.pugx.org/ctl/socialmapfavorites/downloads?format=flat-square)](https://packagist.org/packages/ctl/socialmapfavorites)
 [![Latest Unstable Version](https://poser.pugx.org/ctl/socialmapfavorites/v/unstable?format=flat-square)](https://packagist.org/packages/ctl/socialmapfavorites)
 
-- ** A PHP Package for Favoriting and Unfavoriting Authenticated Users**
+**A PHP Package for Favoriting and Unfavoriting Authenticated Users**
 
 Currently only supported for Laravel 5.1
 
