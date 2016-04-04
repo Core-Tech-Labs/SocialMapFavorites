@@ -1,16 +1,12 @@
 # Social Map Favorites
 
-[![Latest Version](https://img.shields.io/github/release/thephpleague/skeleton.svg?style=flat-square)](https://github.com/Core-Tech-Labs/SocialMapFavorites/releases)
-
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-
+[![Latest Stable Version](https://poser.pugx.org/ctl/socialmapfavorites/v/stable?format=flat-square)](https://packagist.org/packages/ctl/socialmapfavorites)
+[![Software License](https://img.shields.io/badge/License-EPL-green.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://travis-ci.org/Core-Tech-Labs/SocialMapFavorites.svg?branch=master)](https://travis-ci.org/Core-Tech-Labs/SocialMapFavorites)
-
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Core-Tech-Labs/SocialMapFavorites/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Core-Tech-Labs/SocialMapFavorites/?branch=master)
-
 [![Code Coverage](https://scrutinizer-ci.com/g/Core-Tech-Labs/SocialMapFavorites/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Core-Tech-Labs/SocialMapFavorites/?branch=master)
-
-[![Total Downloads](https://img.shields.io/packagist/dt/league/skeleton.svg?style=flat-square)](https://packagist.org/packages/Core-Tech-Labs/SocialMapFavorites)
+[![Total Downloads](https://poser.pugx.org/ctl/socialmapfavorites/downloads?format=flat-square)](https://packagist.org/packages/ctl/socialmapfavorites)
+[![Latest Unstable Version](https://poser.pugx.org/ctl/socialmapfavorites/v/unstable?format=flat-square)](https://packagist.org/packages/ctl/socialmapfavorites)
 
 - ** A PHP Package for Favoriting and Unfavoriting Authenticated Users**
 
