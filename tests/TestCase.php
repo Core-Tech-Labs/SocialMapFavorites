@@ -9,7 +9,7 @@ abstract class TestCase extends PHPUnit_Framework_TestCase{
 
 
 
-  public function databaseSetup(){
+  public function setUp(){
 
     $this->setUpDatabase();
     $this->migrateTables();
@@ -19,8 +19,13 @@ abstract class TestCase extends PHPUnit_Framework_TestCase{
 
     $db = new DB;
 
-    $db->addConnection(['driver' => 'sqlite', 'database' => ':memory:']);
-    $db->connection();
+    $db->addConnection([
+        'driver' => 'sqlite',
+        'database' => ':memory:',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+    ]);
+
 
     $db->setEventDispatcher(new Dispatcher(new Container));
 
@@ -33,6 +38,11 @@ abstract class TestCase extends PHPUnit_Framework_TestCase{
       $table->increments('id');
       $table->string('favoritee_id');
       $table->string('favorited_id');
+      $table->timestamps();
+    });
+
+    DB::schema()->create('users', function($table){
+      $table->increments('id');
       $table->timestamps();
     });
 
@@ -52,4 +62,6 @@ abstract class TestCase extends PHPUnit_Framework_TestCase{
 class User extends Model{
 
   use CTL\SocialMapFavorites\Core\Users\ActionableTrait;
+
+
 }

@@ -15,7 +15,7 @@ class SocialMapFavoritesServiceProvider extends ServiceProvider {
   public function boot()
   {
         $this->package('CTL/SocialMapFavorites');
-        $this->setModelConnection
+        $this->setModelConnection();
   }
 
   /**

@@ -37,7 +37,6 @@ trait ActionableTrait{
 
     $fvId = $authUser->favUsers()->lists('favorited_id')->toArray();
 
-    // dd($this->id);
     return in_array($this->id, $fvId);
   }
 

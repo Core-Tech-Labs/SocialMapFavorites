@@ -51,7 +51,7 @@ class UsersOrigin{
 
     /**
      * Unfavorite a user
-     * @param  [type] $userIdToUnFav [description]
+     * @param  [type] $userIDToUnFav [description]
      * @param  User   $user          [description]
      * @return [type]                [description]
      */

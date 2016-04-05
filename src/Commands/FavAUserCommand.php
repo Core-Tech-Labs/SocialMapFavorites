@@ -16,7 +16,6 @@ class FavAUserCommand extends Command implements SelfHandling
     /**
      * Create a new command instance.
      *
-     * @return void
      */
     public function __construct($userID, $userIDToFav)
     {
@@ -27,7 +26,6 @@ class FavAUserCommand extends Command implements SelfHandling
     /**
      * Execute the command.
      *
-     * @return void
      */
     public function handle(UsersOrigin $UsersOrigin)
     {
