@@ -4,6 +4,7 @@ namespace CTL\SocialMapFavorites\Commands;
 
 use Core\Users\UsersOrigin;
 use Illuminate\Contracts\Bus\SelfHandling;
+use CTL\SocialMapFavorites\Commands\Command;
 
 
 class FavAUserCommand extends Command implements SelfHandling
