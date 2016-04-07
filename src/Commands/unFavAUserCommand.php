@@ -3,9 +3,9 @@
 namespace CTL\SocialMapFavorites\Commands;
 
 use Core\Users\UsersOrigin;
-use Illuminate\Contracts\Bus\SelfHandling;
+use CTL\SocialMapFavorites\Commands\Command;
 
-class UnFavAUserCommand extends Command implements SelfHandling
+class UnFavAUserCommand extends Command
 {
 
     public $userID;
@@ -16,7 +16,6 @@ class UnFavAUserCommand extends Command implements SelfHandling
     /**
      * Create a new command instance.
      *
-     * @return void
      */
     public function __construct($userID, $userIDToUnFav)
     {
@@ -27,7 +26,6 @@ class UnFavAUserCommand extends Command implements SelfHandling
     /**
      * Execute the command.
      *
-     * @return void
      */
     public function handle(UsersOrigin $UsersOrigin)
     {

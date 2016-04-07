@@ -6,9 +6,7 @@ namespace CTL\SocialMapFavorites\Core\Users;
 trait ActionableTrait{
 
   /**
-   * List of users that the current user faved.
-   *
-   * @return [type] [description]
+   * Eloquent Model that Belongs to itself
    */
   public function favUsers(){
 
@@ -16,9 +14,7 @@ trait ActionableTrait{
   }
 
   /**
-   * list of users who favorited the current user
-   *
-   * @return [type] [description]
+   * Eloquent Model belongs to itself
    */
   public function favs(){
 
@@ -26,16 +22,12 @@ trait ActionableTrait{
   }
 
   /**
-   * See if current user follows another user.
-   *
-   * @param  User    $authUser [description]
-   * @return boolean            [description]
+   * Checks who ever the Authenticated User favorited.
    */
   public function CheckFavorited(){
 
-    $authUser = \Auth::user();
 
-    $fvId = $authUser->favUsers()->lists('favorited_id')->toArray();
+    $fvId = \Auth::user()->favUsers()->lists('favorited_id')->toArray();
 
     return in_array($this->id, $fvId);
   }
