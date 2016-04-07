@@ -23,7 +23,7 @@ class ActionableTest extends TestCase{
     function test_if_it_deletes_the_favoritee_id(){
       $user = new User;
 
-      $UnFavAUserCommand = new unFavAUserCommand($user->userID, $user->userIDToUnFav);
+      $UnFavAUserCommand = new UnFavAUserCommand($user->userID, $user->userIDToUnFav);
 
       $user->favUsers()->detach($user->userIDToUnFav);
     }
