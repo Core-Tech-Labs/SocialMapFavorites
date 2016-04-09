@@ -1,8 +1,6 @@
 <?php
 namespace CTL\SocialMapFavorites;
 
-use App\userData;
-use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
 
 class SocialMapFavoritesServiceProvider extends ServiceProvider {
@@ -14,26 +12,46 @@ class SocialMapFavoritesServiceProvider extends ServiceProvider {
    */
   public function boot()
   {
-        $this->package('CTL/SocialMapFavorites');
-        $this->setModelConnection();
+      $this->loadupCommands();
+      $this->loadupMigrations()
+
+  }
+
+  /**
+   * Setting up Favorite Command Handlers && ActionableTrait
+   */
+  protected function loadupCommands(){
+    $this->publishes([
+        __DIR__.'/Commands/FavAUserCommand' => base_path('app/Commands'),
+    ]);
+
+    $this->publishes([
+        __DIR__.'/Commands/unFavAUserCommand' => base_path('app/Commands'),
+    ]);
+
+    $this->publishes([
+        __DIR__.'/Core/Users/' => base_path('Core/Users/'),
+    ]);
+
+  }
+
+  /**
+   * Setting up migration files
+   */
+  protected function loadupMigrations(){
+    $this->publishes([
+        __DIR__.'/database' => database_path('migrations'),
+    ], 'fav_migration');
   }
 
   /**
    * Register any application services.
    *
-   * This service provider is a great spot to register your various container
-   * bindings with the application. As you can see, we are registering our
-   * "Registrar" implementation here. You can add your own bindings too!
-   *
-   * @return void
    */
   public function register()
   {
-
+    //
   }
 
-  public function setModelConnection(){
-
-  }
 
 }
