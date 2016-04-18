@@ -24,9 +24,84 @@ $ composer require ctl/socialmapfavorites
 
 ## Usage
 
+
 ``` bash
 $ php artisan vendor:publish
 ```
+
+Navigate to `App/Commands/FavAUserCommand`. Replace `use CTL\SocialMapFavorites\Commands\Command;` with `use App\Commands\Command;`
+
+Repeat above with `unFavAUserCommand`
+
+Navigage to `App\Users`. Add `ActionableTrait` like so....
+
+``` php
+<?php
+namespace App;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+
+class User extends Model implements AuthenticatableContract,
+                                    AuthorizableContract,
+                                    CanResetPasswordContract
+{
+    use Authenticatable, Authorizable, CanResetPassword, ActionableTrait;
+
+    /**
+     * The database table used by the model.
+```
+
+Finally, run....
+``` bash
+$ php artisan make:migrate CreateFavoritesTable
+```
+
+To create a favs table
+
+Your Migration should look like
+
+``` php
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateFavoritesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('favs', function(Blueprint $table){
+            $table->increments('id');
+            $table->integer('favoritee_id')->index();
+            $table->integer('favorited_id')->index();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('favs', function(Blueprint $table){
+            Schema::drop('favs');
+        });
+    }
+}
+```
+
 
 ## Testing
 
