@@ -13,8 +13,6 @@ class SocialMapFavoritesServiceProvider extends ServiceProvider {
   public function boot()
   {
       $this->loadupCommands();
-      $this->loadupMigrations()
-
   }
 
   /**
@@ -33,15 +31,6 @@ class SocialMapFavoritesServiceProvider extends ServiceProvider {
         __DIR__.'/Core/Users/' => base_path('Core/Users/'),
     ]);
 
-  }
-
-  /**
-   * Setting up migration files
-   */
-  protected function loadupMigrations(){
-    $this->publishes([
-        __DIR__.'/database' => database_path('migrations'),
-    ], 'fav_migration');
   }
 
   /**
