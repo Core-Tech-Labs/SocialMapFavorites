@@ -1,5 +1,4 @@
 <?php
-
 namespace CTL\SocialMapFavorites\Core\Users;
 
 
@@ -26,9 +25,7 @@ trait ActionableTrait{
    */
   public function CheckFavorited(){
 
-
     $fvId = \Auth::user()->favUsers()->lists('favorited_id')->toArray();
-
     return in_array($this->id, $fvId);
   }
 
