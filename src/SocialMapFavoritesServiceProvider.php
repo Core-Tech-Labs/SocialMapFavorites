@@ -3,7 +3,7 @@ namespace CTL\SocialMapFavorites;
 
 use Illuminate\Support\ServiceProvider;
 
-class SocialMapFavoritesServiceProvider extends ServiceProvider {
+class SocialMapFavoritesServiceProvider extends ServiceProvider{
 
   /**
    * Bootstrap any application services.
