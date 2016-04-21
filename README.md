@@ -22,7 +22,7 @@ Via Composer
 $ composer require ctl/socialmapfavorites
 ```
 
-## Usage
+## Installation
 
 
 ``` bash
@@ -100,6 +100,54 @@ class CreateFavoritesTable extends Migration
         });
     }
 }
+```
+### Extended Installation
+
+Within blade files..
+
+``` php
+    @if (!$VariableName->checkFavorited() )
+        <div class="btn-group">
+          {!! Form::open(['action'=>'ControllerName@store']) !!}
+          {!! Form::hidden('userIDToFav', $VariableName->id) !!}
+
+            <button type="submit" class="btn btn-success">Add Fav</button>
+          {!! Form::close() !!}
+        </div>
+    @else
+        {!! Form::open(['method' => 'DELETE', 'action' => ['ControllerName@destroy', $VariableName->id] ]) !!}
+        {!! Form::hidden('userIDToUnFav', $VariableName->id) !!}
+      <div class="btn-group">
+        <button type="submit" class="btn btn-primary FavLabel"><span>Favorited</span></button>
+        {!! Form::close() !!}
+      </div>
+    @endif
+```
+
+Within your controller
+
+``` php
+
+    /**
+     * Favorite A User
+     *
+     */
+    public function store(Request $request)
+    {
+        $base = array_add($request, 'userID', Auth::id() );
+        $this->dispatchFrom(FavAUserCommand::class, $base);
+    }
+
+    /**
+     * UnFavorite a user
+     *
+     */
+    public function destroy(Request $request)
+    {
+        $base = array_add($request, 'userID', Auth::id() );
+        $this->dispatchFrom(UnFavAUserCommand::class, $base);
+    }
+
 ```
 
 
