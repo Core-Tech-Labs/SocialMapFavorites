@@ -1,13 +1,20 @@
 <?php
 
-namespace CTL\SocialMapFavorites\Commands;
+namespace CTL\SocialMapFavorites\Jobs;
 
 use Core\Users\UsersOrigin;
-use CTL\SocialMapFavorites\Commands\Command;
+use CTL\SocialMapFavorites\Jobs\Job;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 
-class FavAUserCommand extends Command
+class FavAUser extends Job implements ShouldQueue
 {
+
+    use InteractsWithQueue, SerializesModels;
+
+
 
     public $userID;
 

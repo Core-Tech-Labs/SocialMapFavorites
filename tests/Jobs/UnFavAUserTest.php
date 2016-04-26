@@ -1,7 +1,7 @@
 <?php
 
-use CTL\SocialMapFavorites\Commands\FavAUserCommand;
-use CTL\SocialMapFavorites\Commands\unFavAUserCommand;
+use CTL\SocialMapFavorites\Jobs\FavAUser;
+use CTL\SocialMapFavorites\Jobs\unFavAUser;
 
 class unFavAUserTest extends TestCase{
 
@@ -15,7 +15,7 @@ class unFavAUserTest extends TestCase{
   function test_if_it_deletes_the_favoritee_id(){
       $user = new User;
 
-      $unFavAUserCommand = new unFavAUserCommand($user->userID, $user->userIDToUnFav);
+      $unFavAUserCommand = new unFavAUser($user->userID, $user->userIDToUnFav);
 
       $user->favUsers()->detach($user->userIDToUnFav);
     }
