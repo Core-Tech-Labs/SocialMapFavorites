@@ -20,11 +20,11 @@ class SocialMapFavoritesServiceProvider extends ServiceProvider{
    */
   protected function loadupCommands(){
     $this->publishes([
-        __DIR__.'/Jobs/FavAUser' => base_path('app/Jobs'),
+        __DIR__.'/Jobs/FavAUser.php' => base_path('app/Jobs'),
     ]);
 
     $this->publishes([
-        __DIR__.'/Jobs/unFavAUser' => base_path('app/Jobs'),
+        __DIR__.'/Jobs/unFavAUser.php' => base_path('app/Jobs'),
     ]);
 
     $this->publishes([
