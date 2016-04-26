@@ -29,6 +29,12 @@ $ composer require ctl/socialmapfavorites
 $ php artisan vendor:publish
 ```
 
+Add the service provider to the `'providers'` array in `config/app.php`
+
+``` php
+CTL\SocialMapFavorites\SocialMapFavoritesServiceProvider::class,
+```
+
 Navigate to `App/Commands/FavAUserCommand`. Replace `use CTL\SocialMapFavorites\Commands\Command;` with `use App\Commands\Command;`
 
 Repeat above with `unFavAUserCommand`
@@ -118,7 +124,7 @@ Within blade files..
         {!! Form::open(['method' => 'DELETE', 'action' => ['ControllerName@destroy', $VariableName->id] ]) !!}
         {!! Form::hidden('userIDToUnFav', $VariableName->id) !!}
       <div class="btn-group">
-        <button type="submit" class="btn btn-primary FavLabel"><span>Favorited</span></button>
+        <button type="submit" class="btn btn-primary"><span>Favorited</span></button>
         {!! Form::close() !!}
       </div>
     @endif
