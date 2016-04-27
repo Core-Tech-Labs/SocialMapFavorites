@@ -35,15 +35,18 @@ Add the service provider to the `'providers'` array in `config/app.php`
 CTL\SocialMapFavorites\SocialMapFavoritesServiceProvider::class,
 ```
 
-Navigate to `App/Commands/FavAUserCommand`. Replace `use CTL\SocialMapFavorites\Commands\Command;` with `use App\Commands\Command;`
+Navigate to `App/Jobs/FavAUser`. Replace `use CTL\SocialMapFavorites\Jobs\Job;` with `use App\Jobs\Job;`
 
-Repeat above with `unFavAUserCommand`
+Repeat above with `unFavAUser`
 
 Navigage to `App\Users`. Add `ActionableTrait` like so....
 
 ``` php
 <?php
+
 namespace App;
+
+use Core\Users\ActionableTrait;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -62,9 +65,22 @@ class User extends Model implements AuthenticatableContract,
      * The database table used by the model.
 ```
 
+Add `"Core\\": "Core/"` to your project composer.json. It should look like this...
+
+``` json
+"psr-4": {
+            "App\\": "app/",
+            "Core\\": "Core/"
+        }
+```
+
+run `composer dump-autoload` if changes does not take effect.
+
+*Change the `namespace` of `Core\Users\ActionableTrait` and `Core\Users\UsersOrigin`*
+
 Finally, run....
 ``` bash
-$ php artisan make:migrate CreateFavoritesTable
+$ php artisan make:migration CreateFavoritesTable
 ```
 
 To create a favs table
@@ -90,7 +106,7 @@ class CreateFavoritesTable extends Migration
             $table->increments('id');
             $table->integer('favoritee_id')->index();
             $table->integer('favorited_id')->index();
-            $table->timestamps();
+            $table->timestamps()->useCurrent();
         });
     }
 
@@ -141,7 +157,7 @@ Within your controller
     public function store(Request $request)
     {
         $base = array_add($request, 'userID', Auth::id() );
-        $this->dispatchFrom(FavAUserCommand::class, $base);
+        $this->dispatchFrom(FavAUser::class, $base);
     }
 
     /**
@@ -151,7 +167,7 @@ Within your controller
     public function destroy(Request $request)
     {
         $base = array_add($request, 'userID', Auth::id() );
-        $this->dispatchFrom(UnFavAUserCommand::class, $base);
+        $this->dispatchFrom(UnFavAUser::class, $base);
     }
 
 ```
