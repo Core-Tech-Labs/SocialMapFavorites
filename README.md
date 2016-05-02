@@ -10,9 +10,7 @@
 
 **A PHP Package for Favoriting and Unfavoriting Authenticated Users**
 
-Currently only supported for Laravel 5.1
-
-### IMPORTANT: THIS PACKAGE IS CURRENTLY IN DEVELOPEMNT.
+Currently only supported for Laravel 5.2
 
 ## Install
 
