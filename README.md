@@ -106,7 +106,7 @@ class CreateFavoritesTable extends Migration
             $table->increments('id');
             $table->integer('favoritee_id')->index();
             $table->integer('favorited_id')->index();
-            $table->timestamps()->useCurrent();
+            $table->timestamps();
         });
     }
 
@@ -154,20 +154,22 @@ Within your controller
      * Favorite A User
      *
      */
-    public function store(Request $request)
-    {
-        $base = array_add($request, 'userID', Auth::id() );
-        $this->dispatchFrom(FavAUser::class, $base);
+    public function store(Request $request){
+      $base = $request->input('userIDToFav');
+      $this->dispatch(new FavAUser(\Auth::id(), $base));
+
+      return back();
     }
 
     /**
      * UnFavorite a user
      *
      */
-    public function destroy(Request $request)
-    {
-        $base = array_add($request, 'userID', Auth::id() );
-        $this->dispatchFrom(UnFavAUser::class, $base);
+    public function destroy(Request $request){
+      $base = $request->input('userIDToUnFav');
+      $this->dispatch(new UnFavAUser(\Auth::id(), $base));
+
+      return back();
     }
 
 ```
