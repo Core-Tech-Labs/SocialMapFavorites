@@ -172,6 +172,57 @@ Within your controller
 
 ```
 
+## For Email Usage
+
+
+Within the controller
+
+``` php
+
+    /**
+     * Fav A User
+     *
+     * @return Response
+     */
+    public function store(User $user, Request $request)
+    {
+        $base = array_add($request, 'userID', Auth::id() );
+        $clear = $this->dispatchFrom(FavAUserCommand::class, $base);
+
+        // For emailing User Fav
+        $findingUserObject = $user->find($request->input('userIDToFav'));
+        $this->mail->sendFavAUserNotificationEmail($findingUser, $request->input('userFaved'), Auth::user()->username);
+
+
+        session()->flash('success_message','You are now following');
+        return back();
+    }
+```
+
+For `$this->mail->sendFavAUserNotificationEmail();`
+
+You would need to
+
+``` php
+
+    protected $mail;
+    protected $usersOrigin;
+
+
+    /**
+    * Class Constructor
+    */
+    public function __construct(UsersOrigin $usersOrigin, FavAUserMail $mail){
+
+      $this->mail = $mail;
+      $this->usersOrigin = $usersOrigin;
+    }
+```
+
+Dont forget to add `use Core\Users\Mail\FavAUserMail;
+` and `use Core\Users\UsersOrigin;
+` at the top of your controller class.
+
 
 ## Testing
 
