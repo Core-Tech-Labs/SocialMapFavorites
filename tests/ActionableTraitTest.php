@@ -8,5 +8,15 @@ class ActionableTraitTest extends TestCase{
 
   }
 
+  function test_favUsers_method(){
+    $user = new User;
+
+    $user->favUsers();
+  }
+
+  function test_CheckFavorited_method(){
+
+  }
+
 
 }

@@ -31,6 +31,10 @@ class SocialMapFavoritesServiceProvider extends ServiceProvider{
         __DIR__.'/Core/Users/' => base_path('Core/Users/'),
     ]);
 
+    $this->publishes([
+        __DIR__.'/Mail/' => base_path('Core/Users/Mail')
+    ]);
+
   }
 
   /**
